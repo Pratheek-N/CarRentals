@@ -1,0 +1,263 @@
+/* CSS for All */
+* {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.container1 {
+  width: 95%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.img-responsive {
+  width: 100%;
+}
+.img-curve {
+  border-radius: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-black {
+  color: black;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+a {
+  color: #ff6b81;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff4757;
+}
+
+.btn {
+  padding: 1%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.btn-primary {
+  background-color: #ff6b81;
+  color: white;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: #ff4757;
+}
+.btn-secondary {
+  background-color: #5352ed;
+  color: white;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  color: white;
+  background-color: #3742fa;
+}
+h2 {
+  color: #2f3542;
+  font-size: 2rem;
+  margin-bottom: 2%;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+.float-container {
+  position: relative;
+  padding: 0.3%;
+}
+.float-text {
+  position: absolute;
+  top: 110px;
+  left: 30%;
+}
+.float-text1 {
+  position: absolute;
+  top: 110px;
+  left: 20%;
+}
+
+.fieldset {
+  border: 1px solid white;
+  margin: 5%;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+/* CSS for Car SEarch Section */
+
+.search {
+  background-image: url(../images/searchbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 60%;
+  padding: 7% 0;
+}
+
+.search input[type="search"] {
+  background-color: white;
+  width: 40%;
+  padding: 1%;
+  font-size: 1rem;
+  border-width: 0.5px;
+  border-color: #485460;
+  border-radius: 5px;
+}
+.search input::placeholder {
+  color: black;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+/* CSS for Brands */
+
+.brands-content {
+  padding: 25px;
+  background-color: #f1f2f6;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
+}
+
+.brands-menu {
+  width: 130px;
+  height: 170px;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.brands-menu:hover {
+  box-shadow: 0 1px 3px rgba(104, 104, 104, 0.8);
+  background-color: white;
+}
+
+.card-img {
+  width: 120px;
+  position: relative;
+  right: 20px;
+  bottom: 5px;
+  z-index: 0;
+}
+.brand-details {
+  color: rgb(112, 112, 112);
+  font-weight: 600;
+  font-size: large;
+}
+.brand-details:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* CSS for Car Types */
+.type-content {
+  padding: 25px;
+  background-color: white;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  justify-items: center;
+}
+
+.type-menu {
+  background: #f1f2f6;
+  box-shadow: 0 1px 3px rgba(104, 104, 104, 0.8);
+  width: 11rem;
+  height: 4rem;
+  padding: 0.5rem;
+  text-align: center;
+  z-index: 0;
+  border-radius: 30%;
+}
+
+.type-menu:hover {
+  box-shadow: 0 1px 6px rgba(104, 104, 104, 0.8);
+}
+
+.type-details {
+  color: #3b3738;
+  z-index: 0;
+  font-weight: 600;
+  /* position: relative; */
+  /* font-size: 22px; */
+}
+.type-details:hover {
+  text-decoration: none;
+  color: black;
+}
+
+/* CSS for Available Cars */
+.menu-content {
+  display: grid;
+  grid-gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+}
+
+.sub-menu {
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  width: 320px;
+  height: 370px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sub-menu:hover {
+  box-shadow: 0 1px 20px rgba(104, 104, 104, 0.8);
+}
+
+.card-img-top {
+  max-height: 150px;
+  max-width: 230px;
+  min-height: 150px;
+  min-width: 230px;
+  z-index: 0;
+}
+
+.car-details {
+  color: #3b3738;
+  font-weight: bold;
+}
+.car-details:hover {
+  text-decoration: none;
+  color: black;
+}
+#sec2 {
+  color: #777;
+  background-color: white;
+  text-align: center;
+  padding: 50px 80px;
+  margin-top: 50px;
+  text-align: justify;
+}
+@media (max-width: 992px) {
+  .type-content {
+    padding: 25px;
+    max-height: 100px;
+    background-color: #fff;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    justify-items: center;
+  }
+}

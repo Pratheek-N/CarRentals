@@ -1,0 +1,17 @@
+.form-area {
+  background-color: #fafafa;
+  padding: 20px 50px 60px 50px;
+  margin: 20px 30px 60px;
+  border: 1px solid GREY;
+  opacity: 0.9;
+}
+.card-img-top {
+  border: solid 0.5px;
+  max-height: 200px;
+  max-width: 290px;
+  min-height: 150px;
+  min-width: 230px;
+  z-index: 0;
+  margin-left: 150px;
+  margin-bottom: 35px;
+}

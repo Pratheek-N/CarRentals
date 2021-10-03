@@ -1,0 +1,101 @@
+<?php
+	session_start();
+	error_reporting(0);
+	include 'config.php';
+	
+	if (isset($_POST['submit'])) {
+
+			$email = $_POST['email'];
+			$sql = "SELECT * FROM users WHERE email='$email'";
+			$result = mysqli_query($conn, $sql);
+			$emailcount = mysqli_num_rows($result);
+
+			if ($emailcount) {
+						$userdata = mysqli_fetch_assoc($result);
+						$username = $userdata['username'];
+						$token = $userdata['token'];
+						$subject = "Reset Password";
+						$body = "<body><h3>Hello $username.</h3><br><a href='http://localhost/car/new-password.php?token=$token'>Click here to Reset your password</a></body>";
+						include('smtp/PHPMailerAutoload.php');
+							$mail=new PHPMailer(true);
+							$mail->isSMTP();
+							$mail->Host="smtp.gmail.com";
+							$mail->Port=587;
+							$mail->SMTPSecure="tls";
+							$mail->SMTPAuth=true;
+							$mail->Username="dpcarrentals.svs@gmail.com";
+							$mail->Password="svscollege";
+							$mail->SetFrom("dpcarrentals.svs@gmail.com");
+							$mail->addAddress("$email");
+							$mail->IsHTML(true);
+							$mail->Subject="$subject";
+							$mail->Body=$body;
+							$mail->SMTPOptions=array('ssl'=>array(
+								'verify_peer'=>false,
+								'verify_peer_name'=>false,
+								'allow_self_signed'=>false
+							));
+							if($mail->send()){
+								$_SESSION['msg']="Check your mail to reset your password $email";
+													header('location:login.php');
+								//echo "Mail send";
+							}else{
+								$_SESSION['pwd-msg']="Email sending failed!";
+							}
+
+	
+						
+			} 
+			else {
+				$_SESSION['pwd-msg']="Invalid Email";
+				}
+}
+
+
+
+?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" sizes="144x144" href="images/favicon.png">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+
+	<title>Forgot Password</title>
+    <style>
+        .container{
+    		width: 380px;
+    		min-height: 300px;
+   			background: #FFF;
+    		border-radius: 5px;
+    		box-shadow: 0 0 5px rgba(0,0,0,.3);
+    		padding: 40px 30px;
+        }
+		
+
+    </style>
+</head>
+<body>
+	<div class="container">
+		<form action="" method="POST" class="login-email">
+			<p class="login-text" style="font-size: 1.5rem; font-weight: 800;">Recover Password</p>
+			<p class="pass-msg"><?php
+			echo $_SESSION['pwd-msg']; 
+			$_SESSION['pwd-msg'] = "<strong>DP Car Rentals</strong>"; ?> </p>
+			<div class="input-group">
+			<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            </div> 
+			<div class="input-group">
+				<button name="submit" class="btn">Send Mail</button>
+			</div>
+			<p class="login-register-text">Remember Password ?  <a href="login.php">Login Here</a>.</p>
+		</form>
+	</div>
+</body>
+</html>

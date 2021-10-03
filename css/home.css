@@ -1,0 +1,414 @@
+/* CSS for All */
+* {
+  margin: 0 0;
+  padding: 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.img-responsive {
+  width: 100%;
+}
+.img-curve {
+  border-radius: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-black {
+  color: black;
+}
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+a {
+  color: #ff6b81;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff4757;
+}
+
+.btn {
+  padding: 1%;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+.btn-primary {
+  background-color: #ff6b81;
+  color: white;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: #ff4757;
+}
+.btn-secondary {
+  background-color: #5352ed;
+  color: white;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  color: white;
+  background-color: #3742fa;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2%;
+}
+
+.float-container {
+  position: relative;
+  padding: 0.3%;
+}
+.float-text {
+  position: absolute;
+  top: 110px;
+  left: 30%;
+}
+.float-text1 {
+  position: absolute;
+  top: 110px;
+  left: 20%;
+}
+
+fieldset {
+  border: 1px solid white;
+  margin: 5%;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+/* CSSS for navbar section */
+.logo {
+  width: 20%;
+  float: left;
+  position: absolute;
+  top: 7px;
+  left: 50px;
+}
+.navigation-bar-container {
+  position: sticky;
+  height: 70px;
+  background: #f1f2f6;
+  z-index: 1;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  border-bottom: #ff4757 solid 2px;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0px auto;
+}
+.navbar1 {
+  float: right;
+}
+.navbar1 ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  z-index: 1;
+}
+.navbar1 ul li {
+  float: left;
+  position: relative;
+}
+.navbar1 ul li a,
+.navbar1 ul li a:visited {
+  display: block;
+  padding: 0px 20px;
+  line-height: 68px;
+  background: #f1f2f6;
+  color: #ff4757;
+  font-weight: 600;
+  font-size: 17px;
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  text-decoration: none;
+}
+.navbar1 ul li a:hover,
+.navbar1 ul li a:visited:hover {
+  background: #2581dc;
+  color: #fff;
+}
+.navbar1 ul li ul li {
+  min-width: 190px;
+}
+.navbar1 ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+.nav-dropdown {
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+.nav-mobile {
+  position: absolute;
+  float: right;
+  top: 0px;
+  right: 0px;
+  background: #cc9191;
+  height: 70px;
+  width: 70px;
+  display: none;
+}
+#nav-toggle {
+  position: absolute;
+  left: 10px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:after,
+#nav-toggle span:before {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #fff;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:after {
+  bottom: 10px;
+}
+#nav-toggle span::before {
+  top: -10px;
+}
+#nav-toggle.active span {
+  background: transparent;
+}
+#nav-toggle.active span:after,
+#nav-toggle.active span:before {
+  top: 0px;
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+@media only screen and (max-width: 790px) {
+  .logo {
+    width: 45%;
+  }
+  .nav-mobile {
+    display: block;
+  }
+  .navbar1 {
+    width: 100%;
+    padding: 70px 0px 0px;
+  }
+  .navbar1 ul {
+    display: none;
+  }
+  .navbar1 ul li {
+    float: none;
+  }
+  .navbar1 ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  .navbar1 ul li ul li a {
+    padding-left: 30px;
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 799px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+
+/* CSS for Brands */
+.brands {
+  padding: 4% 0;
+  background-color: #f1f2f6;
+}
+
+/* CSS for Car Types */
+.car-types {
+  padding: 4% 0;
+  height: fit-content;
+}
+
+/* CSS for Latest Cars */
+.latest-cars {
+  background-color: #f1f2f6;
+  padding: 4% 0;
+}
+
+/* CSS for Social */
+.social {
+  background-color: #f1f2f6;
+}
+.social ul {
+  list-style-type: none;
+}
+.social ul li {
+  display: inline;
+  padding: 1%;
+}
+
+.to-top {
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: #ff4757 !important;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.to-top.active {
+  bottom: 32px;
+  pointer-events: auto;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.fun-facts-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../images/fun-facts-bg.jpg) repeat scroll 0 0;
+  padding: 100px 0;
+  position: relative;
+}
+.fun-facts-m .cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+.fun-facts-m {
+  background: #fa2837 none repeat scroll 0 0;
+  fill: #fa2837;
+  border-radius: 50%;
+  color: #ffffff;
+  display: table;
+  height: 178px;
+  margin: 0 auto;
+  text-align: center;
+  width: 188px;
+}
+.fun-facts-m h2 {
+  color: #ffffff;
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 900;
+}
+.fun-facts-m p {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.testimonial-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../images/lets.jpg);
+}
+
+.parallex-bg {
+  background-attachment: fixed;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.section-padding {
+  padding: 110px 0;
+}
+.input1 input[type="text"] {
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+  border-width: 0.5px;
+  border-color: black;
+  border-radius: 5px;
+}
+.fun-facts-m h2 .fa {
+  display: block;
+}
+
+.wrapper {
+  display: flex;
+}
+.wrapper .static-txt {
+  color: red;
+  font-size: 70px;
+  font-weight: 500;
+}
+.wrapper .dynamic-txts {
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: #2e2b2b;
+  font-size: 60px;
+  font-weight: 400;
+  position: relative;
+  top: 10px;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  background: #f1f2f6;
+  border-left: 2px solid #fc6d6d;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
