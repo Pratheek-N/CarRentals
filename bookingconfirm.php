@@ -116,32 +116,8 @@ if($_SESSION['username']){
     <tr><td>Rent End Date:</td><td>$rent_end_date</td></tr>
     <tr><td>Fare:</td><td>Rs.$fare/$charge_type1</td></tr>
     </table>";
+    sendingmail('Booking Confirmed',$html,$email,'')
 	
-	include('smtp/PHPMailerAutoload.php');
-	$mail=new PHPMailer(true);
-	$mail->isSMTP();
-	$mail->Host="smtp.gmail.com";
-	$mail->Port=587;
-	$mail->SMTPSecure="tls";
-	$mail->SMTPAuth=true;
-	$mail->Username="dpcarrentals.svs@gmail.com";
-	$mail->Password="svscollege";
-	$mail->SetFrom("dpcarrentals.svs@gmail.com");
-	$mail->addAddress("$email");
-	$mail->IsHTML(true);
-	$mail->Subject="Booking Confirmed";
-	$mail->Body=$html;
-	$mail->SMTPOptions=array('ssl'=>array(
-		'verify_peer'=>false,
-		'verify_peer_name'=>false,
-		'allow_self_signed'=>false
-	));
-	if($mail->send()){
-		//echo "Mail send";
-	}else{
-		echo "<script>alert('Mail not sent')</script>";//echo "Error occur";
-	}
-
 ?>
 
 

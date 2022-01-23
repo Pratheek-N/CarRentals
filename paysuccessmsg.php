@@ -112,29 +112,7 @@ $html="<h1>Thank You $name ,Your transaction has been successfully completed.</h
 <tr><td>Total Amount</td><td>Rs.$total_amount</td></tr>
 </table>";
 
-include('smtp/PHPMailerAutoload.php');
-$mail=new PHPMailer(true);
-$mail->isSMTP();
-$mail->Host="smtp.gmail.com";
-$mail->Port=587;
-$mail->SMTPSecure="tls";
-$mail->SMTPAuth=true;
-$mail->Username="dpcarrentals.svs@gmail.com";
-$mail->Password="svscollege";
-$mail->SetFrom("dpcarrentals.svs@gmail.com");
-$mail->addAddress("$email");
-$mail->IsHTML(true);
-$mail->Subject="Payment Successfull";
-$mail->Body=$html;
-$mail->SMTPOptions=array('ssl'=>array(
-    'verify_peer'=>false,
-    'verify_peer_name'=>false,
-    'allow_self_signed'=>false
-));
-if($mail->send()){
-    //echo "Mail send";
-}else{
-    echo "Mail not sent";//echo "Error occur";
-}
+sendingmail('Payment Successfull',$html,$email,'');
+
 
 include 'footer.inc.php';}?>

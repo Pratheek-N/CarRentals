@@ -1,6 +1,7 @@
 <?php 
 include '../config.php';
 
+
 function get_safe_value($conn,$str){
                         if($str!=''){
                            $str=trim($str);

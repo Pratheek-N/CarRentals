@@ -11,33 +11,11 @@ $result = $conn->query($sql);
 $row=mysqli_fetch_assoc($result);
 $email=$row['email'];
 $message="<h1>Hello $login_customer,Your bill is ready to pay</h1>
-        <a style='text-decoration:none; font-size:10px;' href='localhost/car/paybill.php?order_id=".$id."'>Click Here to pay</a>";
-include('../smtp/PHPMailerAutoload.php');
-        $mail=new PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host="smtp.gmail.com";
-        $mail->Port=587;
-        $mail->SMTPSecure="tls";
-        $mail->SMTPAuth=true;
-        $mail->Username="dpcarrentals.svs@gmail.com";
-        $mail->Password="svscollege";
-        $mail->SetFrom("dpcarrentals.svs@gmail.com");
-        $mail->addAddress($email);
-        $mail->IsHTML(true);
-        $mail->Subject="Pay Bill";
-        $mail->Body=$message;
-        $mail->SMTPOptions=array('ssl'=>array(
-            'verify_peer'=>false,
-            'verify_peer_name'=>false,
-            'allow_self_signed'=>false
-        ));
-        if($mail->send()){
+     <a style='text-decoration:none; font-size:20px;' href='localhost/car/paybill.php?order_id=".$id."'>Click Here to pay</a>";
 
-            // echo "Mail send";
-        }else{
-            echo "<script>alert('Mail not sent')</script>";
-        }
-header("location:manage-bookings.php");}
+     sendingmail('Pay-Bill',$message,$email,header("Location:manage-bookings.php"));
+    
+}
 
 ?>
 

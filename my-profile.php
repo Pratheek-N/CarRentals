@@ -1,7 +1,7 @@
 
 <?php include 'menubar.inc.php' ;
 $username=$_SESSION['username'];
-$sql="SELECT * from users u,rentedcars rc where u.username='$username' and rc.customer_username=u.username";
+$sql="SELECT * from users u where u.username='$username'";
 $res=mysqli_query($conn,$sql);
 while($row=mysqli_fetch_assoc($res)){
     $name=$row['username'];

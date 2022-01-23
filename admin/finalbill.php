@@ -1,4 +1,6 @@
-<?php  include 'partials/admin-header.php'; ?>
+<?php  include 'partials/admin-header.php'; 
+error_reporting(0);
+?>
 
 
 
@@ -40,6 +42,7 @@ if(mysqli_num_rows($result0) > 0) {
             $car_nameplate = $row0["car_nameplate"];
             $charge_type = $row0["charge_type"];
             $max_km=$row0["max_km"];
+            $bookingdate=$row0["booking_date"];
     }
 }
 
@@ -82,11 +85,6 @@ if($charge_type == "day"){
 }
 
 $result1 = $conn->query($sql1);
-if ($result1){
-    $sql2 = "UPDATE cars c, rentedcars rc
-    WHERE rc.car_id=c.id  AND rc.order_id = '$id'";
-    $result2 = $conn->query($sql2);
-}
 
 
 ?>
@@ -122,7 +120,7 @@ if ($result1){
                 }
             ?></h4>
                 <br>
-                <h4> <strong>Booking Date: </strong> <?php echo date("Y-m-d"); ?> </h4>
+                <h4> <strong>Booking Date: </strong> <?php echo $bookingdate ?> </h4>
                 <br>
                 <h4> <strong>Start Date: </strong> <?php echo $rent_start_date; ?></h4>
                 <br>

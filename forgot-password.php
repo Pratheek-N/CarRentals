@@ -16,36 +16,8 @@
 						$token = $userdata['token'];
 						$subject = "Reset Password";
 						$body = "<body><h3>Hello $username.</h3><br><a href='http://localhost/car/new-password.php?token=$token'>Click here to Reset your password</a></body>";
-						include('smtp/PHPMailerAutoload.php');
-							$mail=new PHPMailer(true);
-							$mail->isSMTP();
-							$mail->Host="smtp.gmail.com";
-							$mail->Port=587;
-							$mail->SMTPSecure="tls";
-							$mail->SMTPAuth=true;
-							$mail->Username="dpcarrentals.svs@gmail.com";
-							$mail->Password="svscollege";
-							$mail->SetFrom("dpcarrentals.svs@gmail.com");
-							$mail->addAddress("$email");
-							$mail->IsHTML(true);
-							$mail->Subject="$subject";
-							$mail->Body=$body;
-							$mail->SMTPOptions=array('ssl'=>array(
-								'verify_peer'=>false,
-								'verify_peer_name'=>false,
-								'allow_self_signed'=>false
-							));
-							if($mail->send()){
-								$_SESSION['msg']="Check your mail to reset your password $email";
-													header('location:login.php');
-								//echo "Mail send";
-							}else{
-								$_SESSION['pwd-msg']="Email sending failed!";
-							}
-
-	
-						
-			} 
+						sendingmail($subject,$body,$email,$_SESSION['msg']="Check your mail to reset your password $email",header("Location:login.php"));
+						} 
 			else {
 				$_SESSION['pwd-msg']="Invalid Email";
 				}

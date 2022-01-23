@@ -1,5 +1,8 @@
 <?php  include 'partials/admin-header.php';
 error_reporting(0);
+
+
+
 if(isset($_GET['id'])){
 $id=$_GET['id'];
 
@@ -15,33 +18,11 @@ $name=$row['name'];
 <?php
 if(isset($_POST['reply'])){
     $message=$_POST['reply'];
+    $header= '';
+
         // Sending Mail
-        include('../smtp/PHPMailerAutoload.php');
-        $mail=new PHPMailer(true);
-        $mail->isSMTP();
-        $mail->Host="smtp.gmail.com";
-        $mail->Port=587;
-        $mail->SMTPSecure="tls";
-        $mail->SMTPAuth=true;
-        $mail->Username="dpcarrentals.svs@gmail.com";
-        $mail->Password="svscollege";
-        $mail->SetFrom("dpcarrentals.svs@gmail.com");
-        $mail->addAddress("$email");
-        $mail->IsHTML(true);
-        $mail->Subject="Reply-feedback";
-        $mail->Body=$message;
-        $mail->SMTPOptions=array('ssl'=>array(
-            'verify_peer'=>false,
-            'verify_peer_name'=>false,
-            'allow_self_signed'=>false
-        ));
-        if($mail->send()){
-        header("Location: replyfeedback.php?success=Message sent to $email");
-        exit();
-            // echo "Mail send";
-        }else{
-            echo "Mail not sent";
-        }
+        sendingmail('Reply-Feedback',$message,$email,header("Location:replyfeedback.php?success=Message sent successfully"));
+      
     }
 ?>
 <!DOCTYPE html>
@@ -62,7 +43,7 @@ if(isset($_POST['reply'])){
      	<h2>Reply Message</h2>
      	
      	<?php if (isset($_GET['success'])) { ?>
-            <p class="success"><?php echo $_GET['success']; ?></p>
+            <p class="success text-center"><?php echo $_GET['success']; ?></p>
            
      	<a style="
          margin-left:170px;

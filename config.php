@@ -16,6 +16,36 @@ if (!$conn) {
     die("<script>alert('Connection Failed.')</script>");
 }
 
+function sendingmail($subject,$message,$reciever,$header){
+    
+    // Sending Mail
+    include('smtp/PHPMailerAutoload.php');
+    $mail=new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host="smtp.gmail.com";
+    $mail->Port=587;
+    $mail->SMTPSecure="tls";
+    $mail->SMTPAuth=true;
+    $mail->Username="dpcarrentals.svs@gmail.com";
+    $mail->Password="deekshithpratheek";
+    $mail->SetFrom("dpcarrentals.svs@gmail.com");
+    $mail->addAddress("$reciever");
+    $mail->IsHTML(true);
+    $mail->Subject=$subject;
+    $mail->Body=$message;
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
+ if($mail->send()){
+    $header;
+ }else{
+    echo "Mail not sent";
+ 
+ }
+                
+ }
 
 
 ?>
