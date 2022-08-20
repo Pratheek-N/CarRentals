@@ -6,7 +6,9 @@
   <title>D P Car Rentals</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="admin/assets/css/bootstrap.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="shortcut icon" sizes="144x144" href="images/favicon.png">
   <style>
   /* Make the image fully responsive */
@@ -204,7 +206,6 @@ ur mission is to be recognised as the global leader in Car Rental for companies 
             <div class="w3-col m4 w3-container">
                 <!-- Add Google Maps -->
                 <div id="googleMap" class="w3-round-large" style="position:relative; right:120px;">
-                <iframe width="400" height="270"  src="https://www.youtube.com/embed/J20dE-VJoOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.948256785641!2d75.03907531413458!3d12.911047219699062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4a619d91ee0b5%3A0xfdb962cb4b511ad7!2sShri%20Venkatramana%20Swami%20College!5e0!3m2!1sen!2sin!4v1631515081437!5m2!1sen!2sin" class="w3-greyscale" width="400" height="270" style="border:1; opacity:0.8;" 
                 allowfullscreen="" loading="lazy"></iframe></div>
               </div>
