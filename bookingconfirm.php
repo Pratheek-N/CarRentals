@@ -103,20 +103,6 @@ if($_SESSION['username']){
     if (!$result1 | !$result2){
         die("Couldnt enter data: ".$conn->error);
     }
-    // creating pdf
-
-    // Sending Mail
-
-    $html="<h2>Hello $login_session ,Thank you for visiting DP Car Rentals! We wish you have a safe ride.</h2>
-    <h4>Your Booking Details</h4>
-    <table>
-    <tr><td>Car:</td><td>$car_brand $car_name</td></tr>
-    <tr><td>Nameplate:</td><td>$car_nameplate</td></tr>
-    <tr><td>Rent Start Date:</td><td>$rent_start_date</td></tr>
-    <tr><td>Rent End Date:</td><td>$rent_end_date</td></tr>
-    <tr><td>Fare:</td><td>Rs.$fare/$charge_type1</td></tr>
-    </table>";
-    sendingmail('Booking Confirmed',$html,$email,'')
 	
 ?>
 
