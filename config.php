@@ -27,7 +27,7 @@ function sendingmail($subject,$message,$reciever,$header){
     $mail->SMTPSecure="tls";
     $mail->SMTPAuth=true;
     $mail->Username="dpcarrentals.svs@gmail.com";
-    $mail->Password="fxnkakegvbxlxihv";
+    $mail->Password="nwmbzqalhsduyfpq";
     $mail->SetFrom("dpcarrentals.svs@gmail.com");
     $mail->addAddress("$reciever");
     $mail->IsHTML(true);
